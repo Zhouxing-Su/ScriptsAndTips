@@ -1,0 +1,41 @@
+﻿　　然后假设apache服务器已经安装完成，打开httpd.conf配置文件，找到这些地方去掉＃开启代理模块：
+
+LoadModule proxy_module modules/mod_proxy.so
+LoadModule proxy_connect_module modules/mod_proxy_connect.so
+LoadModule proxy_http_module modules/mod_proxy_http.so
+LoadModule proxy_ftp_module modules/mod_proxy_ftp.so
+
+　　还有确保这里也取消了注释：
+
+Include conf/extra/httpd-vhost.conf
+
+　　然后打开apache/conf/extra目录里面的httpd-vhosts.conf文件，在最后添加如下内容：
+
+NameVirtualHost *:80
+<VIRTUALHOST *:80>
+    ServerName    www.b.com
+    DocumentRoot "D:/web/php站点目录"
+</VIRTUALHOST >
+<VIRTUALHOST *:80>
+    ServerName www.a.com
+    ProxyPass / http://www.a.com:81/
+    ProxyPassReverse / http://www.a.com:81/
+</VIRTUALHOST>
+
+　　最后把两个服务器都重启一下，同时打开www.a.com和www.b.com都能正常访问了。
+
+
+
+For people with only one IP address and multiple sites on one server, you can configure IIS to listen on a port other than 80, e.g 8080 by setting the TCP port in the properties of each of its sites (including the default one).
+
+In Apache, enable mod_proxy and mod_proxy_http, then add a catch-all VirtualHost (after all others) so that requests Apache isn't explicitly handling get "forwarded" on to IIS.
+
+<VirtualHost *:80>
+    ServerName foo.bar
+    ServerAlias *
+    ProxyPreserveHost On
+    ProxyPass / http://127.0.0.1:8080/
+</VirtualHost>
+Now you can have Apache serve some sites and IIS serve others, with no visible difference to the user.
+
+Edit: your IIS sites must not include their port number in any URLs within their responses, including headers.

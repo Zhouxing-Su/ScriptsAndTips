@@ -1,0 +1,13 @@
+﻿System-wide persistent variables in the format of JAVA_PATH=/usr/local/java store in
+
+	/etc/environment
+
+
+System-wide persistent variables that reference variables such as
+export PATH="$JAVA_PATH:$PATH" store in
+
+	/etc/.bashrc
+
+User specific persistent variables
+
+	~/.bashrc

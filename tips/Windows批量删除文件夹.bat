@@ -1,0 +1,1 @@
+﻿for /d %%a in (%1) do rd /s /q %%a

@@ -1,0 +1,14 @@
+﻿创建
+screen -dmSA $1
+
+连接
+screen -r $1
+
+显示全部
+screen -list
+
+断开当前会话
+CTRL-a d
+
+关闭会话
+进入会话输入exit

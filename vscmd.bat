@@ -1,0 +1,1 @@
+%ComSpec% /k ""%VS120COMNTOOLS%VsDevCmd.bat" & powershell"
