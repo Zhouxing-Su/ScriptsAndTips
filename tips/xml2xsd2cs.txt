@@ -1,0 +1,3 @@
+打开 VS 的开发人员命令行:
+xsd FILENAME.xml
+xsd FILENAME.xsd /classes
