@@ -1,0 +1,1 @@
+Import-StartLayout ¨CLayoutPath "F:\Sync\Baidu\2-SoftwareConfig\Windows\StartScreenTileLayout.xml" ¨CMountPath %systemdrive%
