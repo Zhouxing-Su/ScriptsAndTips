@@ -1,0 +1,2 @@
+1. 解压到 C:\texlive\texmf-local\tex\latex\local\宏包名称 目录下
+2. 在 C:\texlive 目录下运行 texhash
