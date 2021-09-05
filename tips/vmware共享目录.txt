@@ -1,1 +1,6 @@
 共享目录自动挂载到/mnt/hgfs下
+
+安装VMwareTools：
+tar zxpf VMwareTools-*.tar.gz
+./xxxx.pl
+mount -t vmhgfs .host:/ /home/szx/share
