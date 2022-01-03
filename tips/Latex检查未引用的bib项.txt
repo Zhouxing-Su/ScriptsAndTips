@@ -1,0 +1,1 @@
+checkcites LATEX-FILE-NAME.aux
