@@ -1,0 +1,5 @@
+ffmpeg -i input-video.mp4 -vn -acodec copy output-audio.m4a
+
+提取格式不能为MP3，可以是aac和m4a
+vn 没有视频。
+acodec copy 说使用已经在那里相同的音频流。
