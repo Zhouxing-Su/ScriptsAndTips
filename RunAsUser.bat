@@ -1,0 +1,1 @@
+runas /env /savecred /user:YOUR_USER_NAME cmd
